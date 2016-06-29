@@ -35,6 +35,11 @@ namespace EventStoreWinServiceWrapper
                 configParameters.Add("ext-http-prefixes", instance.ExternalAddresses);
             }
 
+            if (!string.IsNullOrWhiteSpace(instance.StartStandardProjections))
+            {
+                configParameters.Add("start-standard-projections", instance.StartStandardProjections);
+            }
+
             var externalIp = GetIp(instance.ExternalIP);
             configParameters.Add("ext-ip", externalIp);
             var internalIp = GetIp(instance.InternalIP);

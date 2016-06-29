@@ -54,10 +54,17 @@ namespace EventStoreWinServiceWrapper
         }
 
         [ConfigurationProperty("runProjections", IsRequired = false)]
-        public string RunProjections
+        public string RunProjections 
         {
             get { return (string)this["runProjections"]; }
             set { this["runProjections"] = value; }
+        }
+
+        // Value: True / False (Default false)
+        public string StartStandardProjections
+        {
+            get { return (string) this["startStandardProjections"]; }
+            set { this["startStandardProjections"] = value; }
         }
     }
 }
